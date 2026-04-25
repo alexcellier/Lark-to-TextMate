@@ -5,14 +5,17 @@ Syntaxes Generator
 Generates VS Code extensions for syntax highlighting and TextMate grammars.
 """
 
+import json
 from pathlib import Path
 import click
+from lark import Lark
 from converter import load_and_merge_grammar, expand_templates, convert_to_textmate
 from utils import (
     render_and_write_template,
     ensure_directory,
     extract_language_metadata
 )
+from textmate_scopes import generate_language_config
 
 @click.command()
 @click.option('--lark-file', required=True, help='Path to the LARK grammar file')
@@ -54,6 +57,14 @@ def generate(lark_file, output):
         },
         syntaxes_dir / f'{language}.tmLanguage.json'
     )
+
+    # Generate language-configuration.json with comment, bracket, and indentation settings
+    try:
+        grammar_obj = Lark(Path(lark_file).read_text(), parser='lalr')
+        lang_config = generate_language_config(grammar_obj)
+        (output_path / 'language-configuration.json').write_text(json.dumps(lang_config, indent=2))
+    except Exception as e:
+        click.echo(f"Warning: Could not generate language-configuration.json: {e}", err=True)
 
     click.echo(f'VS Code extension generated in {output_path}')
 
