@@ -4,9 +4,9 @@ Enhanced LARK to TextMate Grammar Converter
 Handles duplicates, advanced LARK features like priorities, templates, and imports.
 """
 
-import os
 from pathlib import Path
 from lark import Lark
+from utils import create_name_keyed_dict
 
 class MergedGrammar:
     def __init__(self, terminals, rules):
@@ -16,13 +16,12 @@ class MergedGrammar:
 def load_and_merge_grammar(lark_file):
     """Load LARK grammar and merge imports recursively."""
     lark_file_path = Path(lark_file)
-    with open(lark_file_path, 'r') as f:
-        content = f.read()
+    content = lark_file_path.read_text()
 
     # Parse the grammar
     grammar = Lark(content, parser='lalr')
 
-    merged_terminals = {term.name: term for term in grammar.terminals}
+    merged_terminals = create_name_keyed_dict(grammar.terminals, key_attr='name')
     merged_rules = {rule.origin.name: rule for rule in grammar.rules}
 
     # Stub for imports
