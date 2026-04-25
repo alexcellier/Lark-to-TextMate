@@ -21,3 +21,13 @@ This will generate a VS Code extension in a subfolder named `{grammar}-syntax`, 
 - Generates complete VS Code extensions
 - Supports syntax highlighting
 - Includes TextMate grammars
+
+## Examples
+
+Sample LARK grammar files are available in the [examples/](examples/) directory, organized by complexity:
+
+- **[Simple](examples/simple/)** - Basic arithmetic expression grammar (learning)
+- **[Advanced](examples/advanced/)** - SystemRDL register definition language (production-grade)
+- **[Test](examples/test/)** - Invalid syntax for error handling validation
+
+See [examples/README.md](examples/README.md) for detailed documentation on each example and how to use them.
