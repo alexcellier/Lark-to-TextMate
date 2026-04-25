@@ -7,14 +7,15 @@ Implements proper rule tree expansion and TextMate scope naming standards.
 
 import re
 from pathlib import Path
-from lark import Lark, Tree, Token
+from lark import Lark
+from lark.grammar import NonTerminal, Terminal
 from utils import create_name_keyed_dict
 from textmate_scopes import classify_terminal
 
 class MergedGrammar:
     def __init__(self, terminals, rules):
         self.terminals = terminals  # dict name -> terminal
-        self.rules = rules  # dict name -> rule
+        self.rules = rules  # dict name -> list of rules
 
 def load_and_merge_grammar(lark_file):
     """Load LARK grammar and merge imports recursively."""
@@ -25,7 +26,9 @@ def load_and_merge_grammar(lark_file):
     grammar = Lark(content, parser='lalr')
 
     merged_terminals = create_name_keyed_dict(grammar.terminals, key_attr='name')
-    merged_rules = {rule.origin.name: rule for rule in grammar.rules}
+    merged_rules = {}
+    for rule in grammar.rules:
+        merged_rules.setdefault(rule.origin.name, []).append(rule)
 
     # Stub for imports
     return MergedGrammar(terminals=merged_terminals, rules=merged_rules)
@@ -40,9 +43,6 @@ def convert_to_textmate(grammar, language):
     seen_patterns = set()
     repository = {}
 
-    # Sort rules by priority if available
-    sorted_rules = sorted(grammar.rules.values(), key=lambda r: getattr(r, 'priority', 0), reverse=True)
-
     # Convert terminals to patterns, uniquify by pattern content
     for terminal in grammar.terminals.values():
         pattern = terminal_to_pattern(terminal, language)
@@ -50,13 +50,17 @@ def convert_to_textmate(grammar, language):
         if pattern_tuple not in seen_patterns:
             patterns.append(pattern)
             seen_patterns.add(pattern_tuple)
+        if terminal.name not in repository:
+            repository[terminal.name] = pattern
 
-    # Convert rules to repository entries, uniquify by name
-    for rule in sorted_rules:
-        rule_name = rule.origin.name
-        if rule_name not in repository:  # Uniquify
-            repo_pattern = rule_to_repo_pattern(rule, language)
-            repository[rule_name] = repo_pattern
+    # Convert rules to repository entries and merge alternatives by rule name
+    for rule_name, rules in grammar.rules.items():
+        repository.setdefault(rule_name, {'patterns': []})
+        sorted_rules = sorted(rules, key=lambda r: getattr(r, 'priority', 0), reverse=True)
+        for rule in sorted_rules:
+            repo_pattern = rule_to_repo_pattern(rule, grammar, language)
+            if repo_pattern.get('patterns'):
+                repository[rule_name].setdefault('patterns', []).extend(repo_pattern['patterns'])
 
     return {'patterns': patterns, 'repository': repository}
 
@@ -70,7 +74,7 @@ def terminal_to_pattern(terminal, language):
         'name': scope_name
     }
 
-def rule_to_repo_pattern(rule, language='generic', visited=None, depth=0):
+def rule_to_repo_pattern(rule, grammar, language='generic', visited=None, depth=0):
     """
     Convert LARK rule to TextMate repository pattern with proper rule tree expansion.
     
@@ -89,82 +93,46 @@ def rule_to_repo_pattern(rule, language='generic', visited=None, depth=0):
     patterns = []
     
     try:
-        # rule.expansion contains the RHS of the rule (list of terminals and rules)
         for expansion_item in rule.expansion:
-            item_pattern = expand_rule_element(expansion_item, language, visited, depth + 1)
+            item_pattern = expand_rule_element(expansion_item, grammar, language, visited, depth + 1)
             if item_pattern:
                 patterns.append(item_pattern)
     except (AttributeError, TypeError):
-        # If rule structure differs, return minimal pattern
         pass
     
     return {'patterns': patterns if patterns else []}
 
 
-def expand_rule_element(element, language, visited, depth):
+def expand_rule_element(element, grammar, language, visited, depth):
     """
-    Expand a single rule element (terminal, rule reference, or tree) into TextMate pattern.
+    Expand a single rule element (NonTerminal, Terminal, or tree) into a TextMate pattern.
     
     Args:
-        element: Can be Token or Tree from rule.expansion
+        element: Can be NonTerminal, Terminal, or Tree from rule.expansion
+        grammar: The parsed Lark grammar object
         language: Language name for scopes
-        visited: Set of visited rule names (for cycle detection)
+        visited: Set of visited rule names
         depth: Current recursion depth
     
     Returns:
         Dict with TextMate pattern, or None if not expandable
     """
     try:
-        if isinstance(element, Token):
-            # Check token type to distinguish rule references from literals
-            if element.type == 'RULE':
-                # Reference to another rule: create include pattern
-                return {'include': f'#{element.value}'}
-            else:
-                # String literal or other token: create match pattern
-                literal_value = str(element.value)
-                
-                # Strip quotes if present
-                if (literal_value.startswith('"') and literal_value.endswith('"')) or \
-                   (literal_value.startswith("'") and literal_value.endswith("'")):
-                    literal_value = literal_value[1:-1]
-                
-                # Escape regex special characters
-                escaped = re.escape(literal_value)
-                
-                # Classify scope based on content
-                if literal_value in ['+', '-', '*', '/', '%', '==', '!=', '<', '>', '<=', '>=', '&&', '||', '!']:
-                    scope = f'source.{language}.keyword.operator'
-                elif literal_value in ['{', '}', '[', ']', '(', ')', ',', ';', ':']:
-                    scope = f'source.{language}.punctuation'
-                else:
-                    scope = f'source.{language}.keyword.control'
-                
-                return {
-                    'match': escaped,
-                    'name': scope
-                }
+        if isinstance(element, NonTerminal):
+            return {'include': f'#{element.name}'}
         
-        elif isinstance(element, Tree):
-            # Complex structure (alternative, repetition, etc.)
-            # Try to expand recursively
-            if element.data == 'alternatives':
-                # Multiple alternatives: create multiple patterns
-                sub_patterns = []
-                for child in element.children:
-                    sub_pattern = expand_rule_element(child, language, visited, depth)
-                    if sub_pattern:
-                        sub_patterns.append(sub_pattern)
-                return sub_patterns[0] if len(sub_patterns) == 1 else None
-            else:
-                # Other tree types: try to expand children
-                for child in element.children:
-                    result = expand_rule_element(child, language, visited, depth)
-                    if result:
-                        return result
-    
+        if isinstance(element, Terminal):
+            terminal = grammar.terminals.get(element.name)
+            if terminal is None:
+                return None
+            return {'include': f'#{terminal.name}'}
+        
+        if isinstance(element, Tree):
+            for child in element.children:
+                result = expand_rule_element(child, grammar, language, visited, depth)
+                if result:
+                    return result
     except (AttributeError, TypeError, ValueError):
-        # If expansion fails, skip this element
         pass
     
     return None

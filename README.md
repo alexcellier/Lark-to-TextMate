@@ -1,6 +1,6 @@
-# Syntaxes Generator
+# Lark-to-TextMate
 
-A Python tool that automatically generates VS Code extensions for syntax highlighting and TextMate grammars.
+A Python tool that automatically generates VS Code extensions for syntax highlighting and TextMate grammars from LARK grammars.
 
 ## Installation
 

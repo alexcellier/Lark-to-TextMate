@@ -1,6 +1,6 @@
 # LARK Examples
 
-This directory contains sample LARK grammar files organized by complexity level. Each grammar can be used with the syntaxes generator to create VS Code extensions with syntax highlighting.
+This directory contains sample LARK grammar files organized by complexity level. Each grammar can be used with the Lark-to-TextMate generator to create VS Code extensions with syntax highlighting.
 
 ## Directory Structure
 

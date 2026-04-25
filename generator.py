@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Syntaxes Generator
+Lark-to-TextMate Generator
 
-Generates VS Code extensions for syntax highlighting and TextMate grammars.
+Generates VS Code extensions for syntax highlighting and TextMate grammars from LARK grammars.
 """
 
 import json
