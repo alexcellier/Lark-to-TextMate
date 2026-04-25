@@ -2,45 +2,6 @@
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "{{ language }}",
   "scopeName": "{{ scope }}",
-  "patterns": [
-    {
-      "include": "#comment"
-    },
-    {
-      "include": "#string"
-    },
-    {
-      "include": "#keyword"
-    }
-  ],
-  "repository": {
-    "comment": {
-      "patterns": [
-        {
-          "name": "comment.line",
-          "match": "//.*"
-        },
-        {
-          "name": "comment.block",
-          "begin": "/\\*",
-          "end": "\\*/"
-        }
-      ]
-    },
-    "string": {
-      "name": "string.quoted.double",
-      "begin": "\"",
-      "end": "\"",
-      "patterns": [
-        {
-          "name": "constant.character.escape",
-          "match": "\\\\."
-        }
-      ]
-    },
-    "keyword": {
-      "name": "keyword.control",
-      "match": "\\b(if|else|for|while|return)\\b"
-    }
-  }
+  "patterns": {{ patterns | tojson(indent=2) }},
+  "repository": {{ repository | tojson(indent=2) }}
 }

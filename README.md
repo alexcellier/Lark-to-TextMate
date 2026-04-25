@@ -11,8 +11,10 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-python generator.py
+python generator.py --lark-file path/to/grammar.lark
 ```
+
+This will generate a VS Code extension in a subfolder named `{grammar}-syntax`, containing the extension files and TextMate grammar.
 
 ## Features
 

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "sample",
+  "scopeName": "source.sample",
+  "patterns": [
+  {
+    "match": "(?:(?:(?:[0-9])+(?:e|E)(?:(?:\\+|\\-))?(?:[0-9])+|(?:(?:[0-9])+\\.(?:(?:[0-9])+)?|\\.(?:[0-9])+)(?:(?:e|E)(?:(?:\\+|\\-))?(?:[0-9])+)?)|(?:[0-9])+)",
+    "name": "constant.NUMBER"
+  },
+  {
+    "match": "+",
+    "name": "constant.PLUS"
+  },
+  {
+    "match": "-",
+    "name": "constant.MINUS"
+  },
+  {
+    "match": "*",
+    "name": "constant.STAR"
+  },
+  {
+    "match": "/",
+    "name": "constant.SLASH"
+  },
+  {
+    "match": "(",
+    "name": "constant.LPAR"
+  },
+  {
+    "match": ")",
+    "name": "constant.RPAR"
+  },
+  {
+    "include": "#start"
+  },
+  {
+    "include": "#expr"
+  },
+  {
+    "include": "#expr"
+  },
+  {
+    "include": "#expr"
+  },
+  {
+    "include": "#term"
+  },
+  {
+    "include": "#term"
+  },
+  {
+    "include": "#term"
+  },
+  {
+    "include": "#factor"
+  },
+  {
+    "include": "#factor"
+  }
+],
+  "repository": {
+  "expr": {
+    "patterns": []
+  },
+  "factor": {
+    "patterns": []
+  },
+  "start": {
+    "patterns": []
+  },
+  "term": {
+    "patterns": []
+  }
+}
+}

@@ -1,0 +1,29 @@
+{
+  "name": "sample-syntax",
+  "displayName": "sample-syntax",
+  "description": "Syntax highlighting for sample",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "sample",
+        "aliases": ["sample"],
+        "extensions": [".sample"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "sample",
+        "scopeName": "source.sample",
+        "path": "./syntaxes/sample.tmLanguage.json"
+      }
+    ]
+  }
+}
