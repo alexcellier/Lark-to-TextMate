@@ -1,0 +1,29 @@
+{
+  "name": "arithmetic-expression-syntax",
+  "displayName": "arithmetic-expression-syntax",
+  "description": "Syntax highlighting for arithmetic-expression",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "arithmetic-expression",
+        "aliases": ["arithmetic-expression"],
+        "extensions": [".arithmetic-expression"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "arithmetic-expression",
+        "scopeName": "source.arithmetic-expression",
+        "path": "./syntaxes/arithmetic-expression.tmLanguage.json"
+      }
+    ]
+  }
+}

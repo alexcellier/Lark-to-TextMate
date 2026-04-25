@@ -34,7 +34,7 @@ Basic arithmetic expression grammar with support for:
 python generator.py --lark-file examples/simple/arithmetic-expression.lark
 ```
 
-Output: `arithmetic-expression-syntax/` extension directory
+Output: `examples/outputs/arithmetic-expression-syntax/` extension directory
 
 ### Advanced Examples
 
@@ -55,7 +55,7 @@ Comprehensive SystemRDL (System Register Description Language) grammar for hardw
 python generator.py --lark-file examples/advanced/systemrdl-register-definition.lark
 ```
 
-Output: `systemrdl-syntax/` extension directory
+Output: `examples/outputs/systemrdl-register-definition-syntax/` extension directory
 
 ### Test Examples
 
@@ -87,11 +87,11 @@ For each example, the generator creates a VS Code extension directory:
 ```bash
 # Simple example
 python ../generator.py --lark-file examples/simple/arithmetic-expression.lark
-# Creates: arithmetic-expression-syntax/
+# Creates: examples/outputs/arithmetic-expression-syntax/
 
 # Advanced example
 python ../generator.py --lark-file examples/advanced/systemrdl-register-definition.lark
-# Creates: systemrdl-syntax/
+# Creates: examples/outputs/systemrdl-register-definition-syntax/
 
 # Test example (demonstrates error handling)
 python ../generator.py --lark-file examples/test/invalid-syntax-test.lark

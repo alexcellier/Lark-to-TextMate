@@ -1,0 +1,29 @@
+{
+  "name": "systemrdl-register-definition-syntax",
+  "displayName": "systemrdl-register-definition-syntax",
+  "description": "Syntax highlighting for systemrdl-register-definition",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "systemrdl-register-definition",
+        "aliases": ["systemrdl-register-definition"],
+        "extensions": [".systemrdl-register-definition"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "systemrdl-register-definition",
+        "scopeName": "source.systemrdl-register-definition",
+        "path": "./syntaxes/systemrdl-register-definition.tmLanguage.json"
+      }
+    ]
+  }
+}

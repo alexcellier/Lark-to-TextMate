@@ -19,7 +19,7 @@ from textmate_scopes import generate_language_config
 
 @click.command()
 @click.option('--lark-file', required=True, help='Path to the LARK grammar file')
-@click.option('--output', default='.', help='Output directory for the extension')
+@click.option('--output', default='examples/outputs', help='Output directory for the extension')
 def generate(lark_file, output):
     """Generate a VS Code extension for syntax highlighting from LARK grammar."""
     

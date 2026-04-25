@@ -1,0 +1,145 @@
+// ------------------------------------------------------------
+// Simplified SystemRDL grammar for regbankgen frontend
+// ------------------------------------------------------------
+
+start: description*
+
+?description: addrmap_def | reg_def | field_def | signal_def | enum_def | struct_def | constraint_def | property_definition | explicit_component_inst | property_assignment | default_assignment
+
+// ------------------------------------------------------------
+// Structural definitions
+// ------------------------------------------------------------
+
+addrmap_def: "addrmap" CNAME "{" description* "}" CNAME? ";"
+reg_def: "reg" CNAME? reg_body CNAME addr_alloc? ";"
+reg_body: "{" reg_stmt* "}"
+reg_stmt: default_assignment | field_def | signal_def | enum_def | struct_def | constraint_def | explicit_component_inst | property_assignment
+
+field_def: "field" field_body? CNAME field_range_spec? init_value? ";"
+field_body: "{" field_stmt* "}"
+field_stmt: default_assignment | property_assignment | constraint_def | signal_def | enum_def | struct_def | explicit_component_inst
+
+signal_def: "signal" signal_body? CNAME array_spec? ";"
+signal_body: "{" signal_stmt* "}"
+signal_stmt: default_assignment | property_assignment
+
+explicit_component_inst: type_ref CNAME component_inst_array_or_range? addr_alloc? ";"
+component_inst_array_or_range: array_spec | range_spec
+
+// ------------------------------------------------------------
+// Parameters / properties / metadata
+// ------------------------------------------------------------
+
+property_definition: "property" CNAME "{" property_attribute* "}" ";"
+property_attribute: property_type | property_usage | property_default | property_constraint
+property_type: "type" "=" property_data_type array_spec? ";"
+property_data_type: "addrmap" | "regfile" | "reg" | "field" | "mem" | "ref" | "number" | basic_data_type
+property_usage: "component" "=" property_comp_types ";"
+property_comp_types: property_comp_type ("|" property_comp_type)*
+property_comp_type: "addrmap" | "regfile" | "reg" | "field" | "mem" | "signal" | "constraint" | "all"
+property_default: "default" "=" expr ";"
+property_constraint: "constraint" "=" property_constraint_type ";"
+property_constraint_type: "componentwidth"
+
+// ------------------------------------------------------------
+// Enums / structs / constraints
+// ------------------------------------------------------------
+
+enum_def: "enum" CNAME "{" enum_item* "}" ";"
+enum_item: CNAME ("=" expr)? enum_body?
+enum_body: "{" explicit_prop_assignment_stmt* "}"
+
+struct_def: ["abstract"] "struct" CNAME [":" CNAME] "{" struct_elem* "}" ";"
+struct_elem: data_type CNAME array_spec? ";"
+
+constraint_def: "constraint" CNAME? constraint_body constraint_insts? ";"
+constraint_body: "{" constraint_elem* "}"
+constraint_elem: expr ";" | constraint_prop_assignment ";" | "this" "inside" "{" constraint_values? "}" ";" | "this" "inside" CNAME ";" | instance_ref "inside" "{" constraint_values? "}" ";" | instance_ref "inside" CNAME ";"
+constraint_prop_assignment: CNAME "=" expr
+constraint_insts: CNAME ("," CNAME)*
+constraint_values: constraint_value ("," constraint_value)*
+constraint_value: expr | range_spec
+
+// ------------------------------------------------------------
+// Assignments
+// ------------------------------------------------------------
+
+property_assignment: explicit_prop_modifier ";" | explicit_prop_assignment ";" | post_prop_assignment
+default_assignment: "default" explicit_prop_modifier ";" | "default" explicit_prop_assignment ";"
+explicit_prop_modifier: prop_mod CNAME
+explicit_prop_assignment_stmt: prop_assignment_lhs ("=" prop_assignment_rhs)? ";"
+explicit_prop_assignment: prop_assignment_lhs ("=" prop_assignment_rhs)?
+post_prop_assignment: prop_ref ("=" prop_assignment_rhs)? ";" | post_encode_assignment ";"
+post_encode_assignment: instance_ref "->" "encode" "=" CNAME
+prop_mod: "posedge" | "negedge" | "bothedge" | "level" | "nonsticky"
+prop_assignment_lhs: prop_keyword | CNAME
+prop_assignment_rhs: expr | precedencetype_literal
+prop_keyword: "sw" | "hw" | "rclr" | "rset" | "woclr" | "woset" | "wot" | "wzs" | "wzc" | "wzt" | "wclr" | "wset" | "wuser" | "ruser" | "intr" | "sticky" | "stickybit" | "enable" | "mask" | "haltenable" | "haltmask" | "next" | "reset" | "resetsignal" | "we" | "wel" | "hwclr" | "hwset" | "incr" | "decr" | "threshold" | "saturate" | "overflow" | "underflow" | "paritycheck" | "precedence" | "name" | "desc" | "onread" | "onwrite" | "shadow_mode" | "counter" | "signalwidth" | "fieldwidth"
+prop_ref: instance_ref "->" prop_keyword | instance_ref "->" CNAME
+
+// ------------------------------------------------------------
+// References / types / arrays
+// ------------------------------------------------------------
+
+instance_ref: instance_ref_element ("." instance_ref_element)*
+instance_ref_element: CNAME array*
+instance_or_prop_ref: instance_ref "->" prop_keyword | instance_ref "->" CNAME | instance_ref
+array: "[" expr "]"
+range_spec: "[" expr ":" expr "]"
+field_range_spec: "[" expr "]" | "[" expr ":" expr "]"
+array_spec: "[" expr? "]"
+type_ref: CNAME ("." CNAME)?
+data_type: basic_data_type signing? | "accesstype" | "addressingtype" | "onreadtype" | "onwritetype"
+basic_data_type: integer_type | "string" | "boolean" | CNAME
+integer_type: integer_vector_type | integer_atom_type
+integer_atom_type: "longint"
+integer_vector_type: "bit"
+signing: "unsigned"
+addr_alloc: "@" expr | "+=" expr | "%=" expr
+init_value: "=" expr
+
+// ------------------------------------------------------------
+// Expressions
+// ------------------------------------------------------------
+
+?expr: expr_cond
+?expr_cond: expr_or | expr_or "?" expr ":" expr -> ternary
+?expr_or: expr_and | expr_or "||" expr_and -> or_
+?expr_and: expr_eq | expr_and "&&" expr_eq -> and_
+?expr_eq: expr_rel | expr_eq "==" expr_rel -> eq | expr_eq "!=" expr_rel -> ne | expr_eq "===" expr_rel -> case_eq | expr_eq "!==" expr_rel -> case_ne | expr_eq "==?" expr_rel -> wild_eq | expr_eq "!=?" expr_rel -> wild_ne
+?expr_rel: expr_shift | expr_rel "<" expr_shift -> lt | expr_rel "<=" expr_shift -> le | expr_rel ">" expr_shift -> gt | expr_rel ">=" expr_shift -> ge | expr_rel "inside" "{" expr_list? "}" -> inside_set
+?expr_shift: expr_add | expr_shift "<<" expr_add -> lshift | expr_shift ">>" expr_add -> rshift | expr_shift ">>>" expr_add -> arshift | expr_shift "<<<" expr_add -> alshift
+?expr_add: expr_mul | expr_add "+" expr_mul -> add | expr_add "-" expr_mul -> sub
+?expr_mul: expr_unary | expr_mul "*" expr_unary -> mul | expr_mul "/" expr_unary -> div | expr_mul "%" expr_unary -> mod
+?expr_unary: atom | "+" expr_unary -> uplus | "-" expr_unary -> uminus | "~" expr_unary -> bitnot | "!" expr_unary -> lnot | "&" expr_unary -> rand | "~&" expr_unary -> rnand | "|" expr_unary -> ror | "~|" expr_unary -> rnor | "^" expr_unary -> rxor | "~^" expr_unary -> rxnor | "^~" expr_unary -> rxnor2
+?atom: NUMBER -> number | HEXNUMBER -> hexnumber | VERILOG_NUMBER -> verilog_number | STRING -> string | "true" -> true_lit | "false" -> false_lit | "null" -> null_lit | enumref | instance_or_prop_ref | struct_lit | array_lit | cast_expr | "(" expr ")"
+enumref: CNAME "::" CNAME
+cast_expr: type_ref "'(" expr ")"
+struct_lit: type_ref "'{" [struct_kv ("," struct_kv)*] "}"
+struct_kv: CNAME ":" expr
+array_lit: "{" [expr_list] "}"
+expr_list: expr ("," expr)*
+
+primary_literal: NUMBER | HEXNUMBER | VERILOG_NUMBER | STRING | "true" | "false" | "na" | "rw" | "wr" | "r" | "w" | "rw1" | "w1" | "compact" | "regalign" | "fullalign" | "rclr" | "rset" | "ruser" | "woset" | "woclr" | "wot" | "wzs" | "wzc" | "wzt" | "wclr" | "wset" | "wuser" | "hw" | "sw" | "this"
+boolean_literal: "true" | "false"
+accesstype_literal: "na" | "rw" | "wr" | "r" | "w" | "rw1" | "w1"
+onreadtype_literal: "rclr" | "rset" | "ruser"
+onwritetype_literal: "woset" | "woclr" | "wot" | "wzs" | "wzc" | "wzt" | "wclr" | "wset" | "wuser"
+addressingtype_literal: "compact" | "regalign" | "fullalign"
+precedencetype_literal: "hw" | "sw"
+
+// ------------------------------------------------------------
+// Lexical
+// ------------------------------------------------------------
+
+%import common.CNAME
+%import common.NUMBER
+%import common.WS
+%ignore WS
+
+HEXNUMBER: /0[xX][0-9a-fA-F_]+/
+VERILOG_NUMBER: /\d[\d_]*'[sS]?[bBoOdDhH][0-9a-fA-F_xXzZ?_]+/
+STRING: /"(?:\\.|[^"])*"/
+
+%ignore /\/\/[^\n]*/
+%ignore /\/\*.*?\*\//s

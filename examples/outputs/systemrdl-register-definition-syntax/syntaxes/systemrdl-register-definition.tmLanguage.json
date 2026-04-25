@@ -1,0 +1,3739 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "systemrdl-register-definition",
+  "scopeName": "source.systemrdl-register-definition",
+  "patterns": [
+  {
+    "match": "(?:(?:(?:[0-9])+(?:e|E)(?:(?:\\+|\\-))?(?:[0-9])+|(?:(?:[0-9])+\\.(?:(?:[0-9])+)?|\\.(?:[0-9])+)(?:(?:e|E)(?:(?:\\+|\\-))?(?:[0-9])+)?)|(?:[0-9])+)",
+    "name": "source.systemrdl-register-definition.constant.numeric"
+  },
+  {
+    "match": "(?:(?:[A-Z]|[a-z])|_)(?:(?:(?:[A-Z]|[a-z])|[0-9]|_))*",
+    "name": "source.systemrdl-register-definition.string.quoted.double"
+  },
+  {
+    "match": "(?:[ \t\f\r\n])+",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "0[xX][0-9a-fA-F_]+",
+    "name": "source.systemrdl-register-definition.constant.numeric"
+  },
+  {
+    "match": "\\d[\\d_]*\u0027[sS]?[bBoOdDhH][0-9a-fA-F_xXzZ?_]+",
+    "name": "source.systemrdl-register-definition.constant.numeric"
+  },
+  {
+    "match": "\"(?:\\\\.|[^\"])*\"",
+    "name": "source.systemrdl-register-definition.string.quoted.double"
+  },
+  {
+    "match": "\\/\\/[^\n]*",
+    "name": "source.systemrdl-register-definition.comment.line"
+  },
+  {
+    "match": "\\/\\*.*?\\*\\/",
+    "name": "source.systemrdl-register-definition.comment.line"
+  },
+  {
+    "match": "addrmap",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "{",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "}",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": ";",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "reg",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "field",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "signal",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "property",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "type",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "=",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  {
+    "match": "regfile",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "mem",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "ref",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "number",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "component",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "|",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "constraint",
+    "name": "source.systemrdl-register-definition.constant.numeric"
+  },
+  {
+    "match": "all",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "default",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  {
+    "match": "componentwidth",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "enum",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "abstract",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": ":",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "struct",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "this",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "inside",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": ",",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "-\u003e",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "encode",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "posedge",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "negedge",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "bothedge",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "level",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "nonsticky",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "sw",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "hw",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "rclr",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "rset",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "woclr",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "woset",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "wot",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "wzs",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "wzc",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "wzt",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "wclr",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "wset",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "wuser",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "ruser",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "intr",
+    "name": "source.systemrdl-register-definition.constant.numeric"
+  },
+  {
+    "match": "sticky",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "stickybit",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "enable",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "mask",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "haltenable",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  {
+    "match": "haltmask",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  {
+    "match": "next",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "reset",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "resetsignal",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "we",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "wel",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "hwclr",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "hwset",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "incr",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "decr",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "threshold",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "saturate",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "overflow",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "underflow",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "paritycheck",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "precedence",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "name",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "desc",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "onread",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "onwrite",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "shadow_mode",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  {
+    "match": "counter",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "signalwidth",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "fieldwidth",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": ".",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "[",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "]",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "accesstype",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "addressingtype",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  {
+    "match": "onreadtype",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "onwritetype",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "string",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "boolean",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "longint",
+    "name": "source.systemrdl-register-definition.constant.numeric"
+  },
+  {
+    "match": "bit",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "unsigned",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "@",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "+=",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "%=",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "?",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "||",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "\u0026\u0026",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "==",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "!=",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "===",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "!==",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "==?",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "!=?",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "\u003c",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "\u003c=",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "\u003e",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  {
+    "match": "\u003e=",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "\u003c\u003c",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "\u003e\u003e",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "\u003e\u003e\u003e",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "\u003c\u003c\u003c",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "+",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  {
+    "match": "-",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  {
+    "match": "*",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "/",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "%",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "~",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "!",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "\u0026",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  {
+    "match": "~\u0026",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "~|",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "^",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "~^",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "^~",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "true",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "false",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "null",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  {
+    "match": "(",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": ")",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "::",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "\u0027(",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  {
+    "match": "\u0027{",
+    "name": "source.systemrdl-register-definition.punctuation"
+  }
+],
+  "repository": {
+  "ABSTRACT": {
+    "match": "abstract",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "ACCESSTYPE": {
+    "match": "accesstype",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "ADDRESSINGTYPE": {
+    "match": "addressingtype",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  "ADDRMAP": {
+    "match": "addrmap",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "ALL": {
+    "match": "all",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "AMPERSAND": {
+    "match": "\u0026",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  "AT": {
+    "match": "@",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "BANG": {
+    "match": "!",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "BIT": {
+    "match": "bit",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "BOOLEAN": {
+    "match": "boolean",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "BOTHEDGE": {
+    "match": "bothedge",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "CIRCUMFLEX": {
+    "match": "^",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "CNAME": {
+    "match": "(?:(?:[A-Z]|[a-z])|_)(?:(?:(?:[A-Z]|[a-z])|[0-9]|_))*",
+    "name": "source.systemrdl-register-definition.string.quoted.double"
+  },
+  "COLON": {
+    "match": ":",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "COMMA": {
+    "match": ",",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "COMPONENT": {
+    "match": "component",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "COMPONENTWIDTH": {
+    "match": "componentwidth",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "CONSTRAINT": {
+    "match": "constraint",
+    "name": "source.systemrdl-register-definition.constant.numeric"
+  },
+  "COUNTER": {
+    "match": "counter",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "DECR": {
+    "match": "decr",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "DEFAULT": {
+    "match": "default",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  "DESC": {
+    "match": "desc",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "DOT": {
+    "match": ".",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "ENABLE": {
+    "match": "enable",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "ENCODE": {
+    "match": "encode",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "ENUM": {
+    "match": "enum",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "EQUAL": {
+    "match": "=",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  "FALSE": {
+    "match": "false",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "FIELD": {
+    "match": "field",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "FIELDWIDTH": {
+    "match": "fieldwidth",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "HALTENABLE": {
+    "match": "haltenable",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  "HALTMASK": {
+    "match": "haltmask",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  "HEXNUMBER": {
+    "match": "0[xX][0-9a-fA-F_]+",
+    "name": "source.systemrdl-register-definition.constant.numeric"
+  },
+  "HW": {
+    "match": "hw",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "HWCLR": {
+    "match": "hwclr",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "HWSET": {
+    "match": "hwset",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "INCR": {
+    "match": "incr",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "INSIDE": {
+    "match": "inside",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "INTR": {
+    "match": "intr",
+    "name": "source.systemrdl-register-definition.constant.numeric"
+  },
+  "LBRACE": {
+    "match": "{",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "LESSTHAN": {
+    "match": "\u003c",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "LEVEL": {
+    "match": "level",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "LONGINT": {
+    "match": "longint",
+    "name": "source.systemrdl-register-definition.constant.numeric"
+  },
+  "LPAR": {
+    "match": "(",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "LSQB": {
+    "match": "[",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "MASK": {
+    "match": "mask",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "MEM": {
+    "match": "mem",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "MINUS": {
+    "match": "-",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  "MORETHAN": {
+    "match": "\u003e",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  "NAME": {
+    "match": "name",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "NEGEDGE": {
+    "match": "negedge",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "NEXT": {
+    "match": "next",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "NONSTICKY": {
+    "match": "nonsticky",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "NULL": {
+    "match": "null",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "NUMBER": {
+    "match": "(?:(?:(?:[0-9])+(?:e|E)(?:(?:\\+|\\-))?(?:[0-9])+|(?:(?:[0-9])+\\.(?:(?:[0-9])+)?|\\.(?:[0-9])+)(?:(?:e|E)(?:(?:\\+|\\-))?(?:[0-9])+)?)|(?:[0-9])+)",
+    "name": "source.systemrdl-register-definition.constant.numeric"
+  },
+  "ONREAD": {
+    "match": "onread",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "ONREADTYPE": {
+    "match": "onreadtype",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "ONWRITE": {
+    "match": "onwrite",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "ONWRITETYPE": {
+    "match": "onwritetype",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "OVERFLOW": {
+    "match": "overflow",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "PARITYCHECK": {
+    "match": "paritycheck",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "PERCENT": {
+    "match": "%",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "PLUS": {
+    "match": "+",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  "POSEDGE": {
+    "match": "posedge",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "PRECEDENCE": {
+    "match": "precedence",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "PROPERTY": {
+    "match": "property",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "QMARK": {
+    "match": "?",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "RBRACE": {
+    "match": "}",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "RCLR": {
+    "match": "rclr",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "REF": {
+    "match": "ref",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "REG": {
+    "match": "reg",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "REGFILE": {
+    "match": "regfile",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "RESET": {
+    "match": "reset",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "RESETSIGNAL": {
+    "match": "resetsignal",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "RPAR": {
+    "match": ")",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "RSET": {
+    "match": "rset",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "RSQB": {
+    "match": "]",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "RUSER": {
+    "match": "ruser",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "SATURATE": {
+    "match": "saturate",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "SEMICOLON": {
+    "match": ";",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "SHADOW_MODE": {
+    "match": "shadow_mode",
+    "name": "source.systemrdl-register-definition.keyword.operator"
+  },
+  "SIGNAL": {
+    "match": "signal",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "SIGNALWIDTH": {
+    "match": "signalwidth",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "SLASH": {
+    "match": "/",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "STAR": {
+    "match": "*",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "STICKY": {
+    "match": "sticky",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "STICKYBIT": {
+    "match": "stickybit",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "STRING": {
+    "match": "\"(?:\\\\.|[^\"])*\"",
+    "name": "source.systemrdl-register-definition.string.quoted.double"
+  },
+  "STRUCT": {
+    "match": "struct",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "SW": {
+    "match": "sw",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "THIS": {
+    "match": "this",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "THRESHOLD": {
+    "match": "threshold",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "TILDE": {
+    "match": "~",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "TRUE": {
+    "match": "true",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "TYPE": {
+    "match": "type",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "UNDERFLOW": {
+    "match": "underflow",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "UNSIGNED": {
+    "match": "unsigned",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "VBAR": {
+    "match": "|",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "VERILOG_NUMBER": {
+    "match": "\\d[\\d_]*\u0027[sS]?[bBoOdDhH][0-9a-fA-F_xXzZ?_]+",
+    "name": "source.systemrdl-register-definition.constant.numeric"
+  },
+  "WCLR": {
+    "match": "wclr",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "WE": {
+    "match": "we",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "WEL": {
+    "match": "wel",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "WOCLR": {
+    "match": "woclr",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "WOSET": {
+    "match": "woset",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "WOT": {
+    "match": "wot",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "WS": {
+    "match": "(?:[ \t\f\r\n])+",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "WSET": {
+    "match": "wset",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "WUSER": {
+    "match": "wuser",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "WZC": {
+    "match": "wzc",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "WZS": {
+    "match": "wzs",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "WZT": {
+    "match": "wzt",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "__ANON_0": {
+    "match": "number",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "__ANON_1": {
+    "match": "-\u003e",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_10": {
+    "match": "!==",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_11": {
+    "match": "==?",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_12": {
+    "match": "!=?",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_13": {
+    "match": "\u003c=",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_14": {
+    "match": "\u003e=",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_15": {
+    "match": "\u003c\u003c",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_16": {
+    "match": "\u003e\u003e",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_17": {
+    "match": "\u003e\u003e\u003e",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_18": {
+    "match": "\u003c\u003c\u003c",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_19": {
+    "match": "~\u0026",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_2": {
+    "match": "string",
+    "name": "source.systemrdl-register-definition.entity.name"
+  },
+  "__ANON_20": {
+    "match": "~|",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_21": {
+    "match": "~^",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_22": {
+    "match": "^~",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_23": {
+    "match": "::",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_24": {
+    "match": "\u0027(",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_25": {
+    "match": "\u0027{",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_3": {
+    "match": "+=",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_4": {
+    "match": "%=",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_5": {
+    "match": "||",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_6": {
+    "match": "\u0026\u0026",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_7": {
+    "match": "==",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_8": {
+    "match": "!=",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__ANON_9": {
+    "match": "===",
+    "name": "source.systemrdl-register-definition.punctuation"
+  },
+  "__IGNORE_1": {
+    "match": "\\/\\/[^\n]*",
+    "name": "source.systemrdl-register-definition.comment.line"
+  },
+  "__IGNORE_2": {
+    "match": "\\/\\*.*?\\*\\/",
+    "name": "source.systemrdl-register-definition.comment.line"
+  },
+  "__constraint_body_star_9": {
+    "patterns": [
+      {
+        "include": "#constraint_elem"
+      },
+      {
+        "include": "#__constraint_body_star_9"
+      },
+      {
+        "include": "#constraint_elem"
+      }
+    ]
+  },
+  "__constraint_insts_star_10": {
+    "patterns": [
+      {
+        "include": "#COMMA"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#__constraint_insts_star_10"
+      },
+      {
+        "include": "#COMMA"
+      },
+      {
+        "include": "#CNAME"
+      }
+    ]
+  },
+  "__constraint_values_star_11": {
+    "patterns": [
+      {
+        "include": "#COMMA"
+      },
+      {
+        "include": "#constraint_value"
+      },
+      {
+        "include": "#__constraint_values_star_11"
+      },
+      {
+        "include": "#COMMA"
+      },
+      {
+        "include": "#constraint_value"
+      }
+    ]
+  },
+  "__enum_body_star_7": {
+    "patterns": [
+      {
+        "include": "#explicit_prop_assignment_stmt"
+      },
+      {
+        "include": "#__enum_body_star_7"
+      },
+      {
+        "include": "#explicit_prop_assignment_stmt"
+      }
+    ]
+  },
+  "__enum_def_star_6": {
+    "patterns": [
+      {
+        "include": "#enum_item"
+      },
+      {
+        "include": "#__enum_def_star_6"
+      },
+      {
+        "include": "#enum_item"
+      }
+    ]
+  },
+  "__expr_list_star_15": {
+    "patterns": [
+      {
+        "include": "#COMMA"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#__expr_list_star_15"
+      },
+      {
+        "include": "#COMMA"
+      },
+      {
+        "include": "#expr"
+      }
+    ]
+  },
+  "__field_body_star_2": {
+    "patterns": [
+      {
+        "include": "#field_stmt"
+      },
+      {
+        "include": "#__field_body_star_2"
+      },
+      {
+        "include": "#field_stmt"
+      }
+    ]
+  },
+  "__instance_ref_element_star_13": {
+    "patterns": [
+      {
+        "include": "#array"
+      },
+      {
+        "include": "#__instance_ref_element_star_13"
+      },
+      {
+        "include": "#array"
+      }
+    ]
+  },
+  "__instance_ref_star_12": {
+    "patterns": [
+      {
+        "include": "#DOT"
+      },
+      {
+        "include": "#instance_ref_element"
+      },
+      {
+        "include": "#__instance_ref_star_12"
+      },
+      {
+        "include": "#DOT"
+      },
+      {
+        "include": "#instance_ref_element"
+      }
+    ]
+  },
+  "__property_comp_types_star_5": {
+    "patterns": [
+      {
+        "include": "#VBAR"
+      },
+      {
+        "include": "#property_comp_type"
+      },
+      {
+        "include": "#__property_comp_types_star_5"
+      },
+      {
+        "include": "#VBAR"
+      },
+      {
+        "include": "#property_comp_type"
+      }
+    ]
+  },
+  "__property_definition_star_4": {
+    "patterns": [
+      {
+        "include": "#property_attribute"
+      },
+      {
+        "include": "#__property_definition_star_4"
+      },
+      {
+        "include": "#property_attribute"
+      }
+    ]
+  },
+  "__reg_body_star_1": {
+    "patterns": [
+      {
+        "include": "#reg_stmt"
+      },
+      {
+        "include": "#__reg_body_star_1"
+      },
+      {
+        "include": "#reg_stmt"
+      }
+    ]
+  },
+  "__signal_body_star_3": {
+    "patterns": [
+      {
+        "include": "#signal_stmt"
+      },
+      {
+        "include": "#__signal_body_star_3"
+      },
+      {
+        "include": "#signal_stmt"
+      }
+    ]
+  },
+  "__start_star_0": {
+    "patterns": [
+      {
+        "include": "#description"
+      },
+      {
+        "include": "#__start_star_0"
+      },
+      {
+        "include": "#description"
+      }
+    ]
+  },
+  "__struct_def_star_8": {
+    "patterns": [
+      {
+        "include": "#struct_elem"
+      },
+      {
+        "include": "#__struct_def_star_8"
+      },
+      {
+        "include": "#struct_elem"
+      }
+    ]
+  },
+  "__struct_lit_star_14": {
+    "patterns": [
+      {
+        "include": "#COMMA"
+      },
+      {
+        "include": "#struct_kv"
+      },
+      {
+        "include": "#__struct_lit_star_14"
+      },
+      {
+        "include": "#COMMA"
+      },
+      {
+        "include": "#struct_kv"
+      }
+    ]
+  },
+  "addr_alloc": {
+    "patterns": [
+      {
+        "include": "#AT"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#__ANON_3"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#__ANON_4"
+      },
+      {
+        "include": "#expr"
+      }
+    ]
+  },
+  "addrmap_def": {
+    "patterns": [
+      {
+        "include": "#ADDRMAP"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__start_star_0"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#ADDRMAP"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__start_star_0"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#ADDRMAP"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#ADDRMAP"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "array": {
+    "patterns": [
+      {
+        "include": "#LSQB"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#RSQB"
+      }
+    ]
+  },
+  "array_lit": {
+    "patterns": [
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#expr_list"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      }
+    ]
+  },
+  "array_spec": {
+    "patterns": [
+      {
+        "include": "#LSQB"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#RSQB"
+      },
+      {
+        "include": "#LSQB"
+      },
+      {
+        "include": "#RSQB"
+      }
+    ]
+  },
+  "atom": {
+    "patterns": [
+      {
+        "include": "#NUMBER"
+      },
+      {
+        "include": "#HEXNUMBER"
+      },
+      {
+        "include": "#VERILOG_NUMBER"
+      },
+      {
+        "include": "#STRING"
+      },
+      {
+        "include": "#TRUE"
+      },
+      {
+        "include": "#FALSE"
+      },
+      {
+        "include": "#NULL"
+      },
+      {
+        "include": "#enumref"
+      },
+      {
+        "include": "#instance_or_prop_ref"
+      },
+      {
+        "include": "#struct_lit"
+      },
+      {
+        "include": "#array_lit"
+      },
+      {
+        "include": "#cast_expr"
+      },
+      {
+        "include": "#LPAR"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#RPAR"
+      }
+    ]
+  },
+  "basic_data_type": {
+    "patterns": [
+      {
+        "include": "#integer_type"
+      },
+      {
+        "include": "#__ANON_2"
+      },
+      {
+        "include": "#BOOLEAN"
+      },
+      {
+        "include": "#CNAME"
+      }
+    ]
+  },
+  "cast_expr": {
+    "patterns": [
+      {
+        "include": "#type_ref"
+      },
+      {
+        "include": "#__ANON_24"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#RPAR"
+      }
+    ]
+  },
+  "component_inst_array_or_range": {
+    "patterns": [
+      {
+        "include": "#array_spec"
+      },
+      {
+        "include": "#range_spec"
+      }
+    ]
+  },
+  "constraint_body": {
+    "patterns": [
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__constraint_body_star_9"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      }
+    ]
+  },
+  "constraint_def": {
+    "patterns": [
+      {
+        "include": "#CONSTRAINT"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#constraint_body"
+      },
+      {
+        "include": "#constraint_insts"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#CONSTRAINT"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#constraint_body"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#CONSTRAINT"
+      },
+      {
+        "include": "#constraint_body"
+      },
+      {
+        "include": "#constraint_insts"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#CONSTRAINT"
+      },
+      {
+        "include": "#constraint_body"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "constraint_elem": {
+    "patterns": [
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#constraint_prop_assignment"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#THIS"
+      },
+      {
+        "include": "#INSIDE"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#constraint_values"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#THIS"
+      },
+      {
+        "include": "#INSIDE"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#THIS"
+      },
+      {
+        "include": "#INSIDE"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#instance_ref"
+      },
+      {
+        "include": "#INSIDE"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#constraint_values"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#instance_ref"
+      },
+      {
+        "include": "#INSIDE"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#instance_ref"
+      },
+      {
+        "include": "#INSIDE"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "constraint_insts": {
+    "patterns": [
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#__constraint_insts_star_10"
+      },
+      {
+        "include": "#CNAME"
+      }
+    ]
+  },
+  "constraint_prop_assignment": {
+    "patterns": [
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#expr"
+      }
+    ]
+  },
+  "constraint_value": {
+    "patterns": [
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#range_spec"
+      }
+    ]
+  },
+  "constraint_values": {
+    "patterns": [
+      {
+        "include": "#constraint_value"
+      },
+      {
+        "include": "#__constraint_values_star_11"
+      },
+      {
+        "include": "#constraint_value"
+      }
+    ]
+  },
+  "data_type": {
+    "patterns": [
+      {
+        "include": "#basic_data_type"
+      },
+      {
+        "include": "#signing"
+      },
+      {
+        "include": "#basic_data_type"
+      },
+      {
+        "include": "#ACCESSTYPE"
+      },
+      {
+        "include": "#ADDRESSINGTYPE"
+      },
+      {
+        "include": "#ONREADTYPE"
+      },
+      {
+        "include": "#ONWRITETYPE"
+      }
+    ]
+  },
+  "default_assignment": {
+    "patterns": [
+      {
+        "include": "#DEFAULT"
+      },
+      {
+        "include": "#explicit_prop_modifier"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#DEFAULT"
+      },
+      {
+        "include": "#explicit_prop_assignment"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "description": {
+    "patterns": [
+      {
+        "include": "#addrmap_def"
+      },
+      {
+        "include": "#reg_def"
+      },
+      {
+        "include": "#field_def"
+      },
+      {
+        "include": "#signal_def"
+      },
+      {
+        "include": "#enum_def"
+      },
+      {
+        "include": "#struct_def"
+      },
+      {
+        "include": "#constraint_def"
+      },
+      {
+        "include": "#property_definition"
+      },
+      {
+        "include": "#explicit_component_inst"
+      },
+      {
+        "include": "#property_assignment"
+      },
+      {
+        "include": "#default_assignment"
+      }
+    ]
+  },
+  "enum_body": {
+    "patterns": [
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__enum_body_star_7"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      }
+    ]
+  },
+  "enum_def": {
+    "patterns": [
+      {
+        "include": "#ENUM"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__enum_def_star_6"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#ENUM"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "enum_item": {
+    "patterns": [
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#enum_body"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#enum_body"
+      },
+      {
+        "include": "#CNAME"
+      }
+    ]
+  },
+  "enumref": {
+    "patterns": [
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#__ANON_23"
+      },
+      {
+        "include": "#CNAME"
+      }
+    ]
+  },
+  "explicit_component_inst": {
+    "patterns": [
+      {
+        "include": "#type_ref"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#component_inst_array_or_range"
+      },
+      {
+        "include": "#addr_alloc"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#type_ref"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#component_inst_array_or_range"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#type_ref"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#addr_alloc"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#type_ref"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "explicit_prop_assignment": {
+    "patterns": [
+      {
+        "include": "#prop_assignment_lhs"
+      },
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#prop_assignment_rhs"
+      },
+      {
+        "include": "#prop_assignment_lhs"
+      }
+    ]
+  },
+  "explicit_prop_assignment_stmt": {
+    "patterns": [
+      {
+        "include": "#prop_assignment_lhs"
+      },
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#prop_assignment_rhs"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#prop_assignment_lhs"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "explicit_prop_modifier": {
+    "patterns": [
+      {
+        "include": "#prop_mod"
+      },
+      {
+        "include": "#CNAME"
+      }
+    ]
+  },
+  "expr": {
+    "patterns": [
+      {
+        "include": "#expr_cond"
+      }
+    ]
+  },
+  "expr_add": {
+    "patterns": [
+      {
+        "include": "#expr_mul"
+      },
+      {
+        "include": "#expr_add"
+      },
+      {
+        "include": "#PLUS"
+      },
+      {
+        "include": "#expr_mul"
+      },
+      {
+        "include": "#expr_add"
+      },
+      {
+        "include": "#MINUS"
+      },
+      {
+        "include": "#expr_mul"
+      }
+    ]
+  },
+  "expr_and": {
+    "patterns": [
+      {
+        "include": "#expr_eq"
+      },
+      {
+        "include": "#expr_and"
+      },
+      {
+        "include": "#__ANON_6"
+      },
+      {
+        "include": "#expr_eq"
+      }
+    ]
+  },
+  "expr_cond": {
+    "patterns": [
+      {
+        "include": "#expr_or"
+      },
+      {
+        "include": "#expr_or"
+      },
+      {
+        "include": "#QMARK"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#COLON"
+      },
+      {
+        "include": "#expr"
+      }
+    ]
+  },
+  "expr_eq": {
+    "patterns": [
+      {
+        "include": "#expr_rel"
+      },
+      {
+        "include": "#expr_eq"
+      },
+      {
+        "include": "#__ANON_7"
+      },
+      {
+        "include": "#expr_rel"
+      },
+      {
+        "include": "#expr_eq"
+      },
+      {
+        "include": "#__ANON_8"
+      },
+      {
+        "include": "#expr_rel"
+      },
+      {
+        "include": "#expr_eq"
+      },
+      {
+        "include": "#__ANON_9"
+      },
+      {
+        "include": "#expr_rel"
+      },
+      {
+        "include": "#expr_eq"
+      },
+      {
+        "include": "#__ANON_10"
+      },
+      {
+        "include": "#expr_rel"
+      },
+      {
+        "include": "#expr_eq"
+      },
+      {
+        "include": "#__ANON_11"
+      },
+      {
+        "include": "#expr_rel"
+      },
+      {
+        "include": "#expr_eq"
+      },
+      {
+        "include": "#__ANON_12"
+      },
+      {
+        "include": "#expr_rel"
+      }
+    ]
+  },
+  "expr_list": {
+    "patterns": [
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#__expr_list_star_15"
+      },
+      {
+        "include": "#expr"
+      }
+    ]
+  },
+  "expr_mul": {
+    "patterns": [
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#expr_mul"
+      },
+      {
+        "include": "#STAR"
+      },
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#expr_mul"
+      },
+      {
+        "include": "#SLASH"
+      },
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#expr_mul"
+      },
+      {
+        "include": "#PERCENT"
+      },
+      {
+        "include": "#expr_unary"
+      }
+    ]
+  },
+  "expr_or": {
+    "patterns": [
+      {
+        "include": "#expr_and"
+      },
+      {
+        "include": "#expr_or"
+      },
+      {
+        "include": "#__ANON_5"
+      },
+      {
+        "include": "#expr_and"
+      }
+    ]
+  },
+  "expr_rel": {
+    "patterns": [
+      {
+        "include": "#expr_shift"
+      },
+      {
+        "include": "#expr_rel"
+      },
+      {
+        "include": "#LESSTHAN"
+      },
+      {
+        "include": "#expr_shift"
+      },
+      {
+        "include": "#expr_rel"
+      },
+      {
+        "include": "#__ANON_13"
+      },
+      {
+        "include": "#expr_shift"
+      },
+      {
+        "include": "#expr_rel"
+      },
+      {
+        "include": "#MORETHAN"
+      },
+      {
+        "include": "#expr_shift"
+      },
+      {
+        "include": "#expr_rel"
+      },
+      {
+        "include": "#__ANON_14"
+      },
+      {
+        "include": "#expr_shift"
+      },
+      {
+        "include": "#expr_rel"
+      },
+      {
+        "include": "#INSIDE"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#expr_list"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#expr_rel"
+      },
+      {
+        "include": "#INSIDE"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      }
+    ]
+  },
+  "expr_shift": {
+    "patterns": [
+      {
+        "include": "#expr_add"
+      },
+      {
+        "include": "#expr_shift"
+      },
+      {
+        "include": "#__ANON_15"
+      },
+      {
+        "include": "#expr_add"
+      },
+      {
+        "include": "#expr_shift"
+      },
+      {
+        "include": "#__ANON_16"
+      },
+      {
+        "include": "#expr_add"
+      },
+      {
+        "include": "#expr_shift"
+      },
+      {
+        "include": "#__ANON_17"
+      },
+      {
+        "include": "#expr_add"
+      },
+      {
+        "include": "#expr_shift"
+      },
+      {
+        "include": "#__ANON_18"
+      },
+      {
+        "include": "#expr_add"
+      }
+    ]
+  },
+  "expr_unary": {
+    "patterns": [
+      {
+        "include": "#atom"
+      },
+      {
+        "include": "#PLUS"
+      },
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#MINUS"
+      },
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#TILDE"
+      },
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#BANG"
+      },
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#AMPERSAND"
+      },
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#__ANON_19"
+      },
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#VBAR"
+      },
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#__ANON_20"
+      },
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#CIRCUMFLEX"
+      },
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#__ANON_21"
+      },
+      {
+        "include": "#expr_unary"
+      },
+      {
+        "include": "#__ANON_22"
+      },
+      {
+        "include": "#expr_unary"
+      }
+    ]
+  },
+  "field_body": {
+    "patterns": [
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__field_body_star_2"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      }
+    ]
+  },
+  "field_def": {
+    "patterns": [
+      {
+        "include": "#FIELD"
+      },
+      {
+        "include": "#field_body"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#field_range_spec"
+      },
+      {
+        "include": "#init_value"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#FIELD"
+      },
+      {
+        "include": "#field_body"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#field_range_spec"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#FIELD"
+      },
+      {
+        "include": "#field_body"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#init_value"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#FIELD"
+      },
+      {
+        "include": "#field_body"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#FIELD"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#field_range_spec"
+      },
+      {
+        "include": "#init_value"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#FIELD"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#field_range_spec"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#FIELD"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#init_value"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#FIELD"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "field_range_spec": {
+    "patterns": [
+      {
+        "include": "#LSQB"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#RSQB"
+      },
+      {
+        "include": "#LSQB"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#COLON"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#RSQB"
+      }
+    ]
+  },
+  "field_stmt": {
+    "patterns": [
+      {
+        "include": "#default_assignment"
+      },
+      {
+        "include": "#property_assignment"
+      },
+      {
+        "include": "#constraint_def"
+      },
+      {
+        "include": "#signal_def"
+      },
+      {
+        "include": "#enum_def"
+      },
+      {
+        "include": "#struct_def"
+      },
+      {
+        "include": "#explicit_component_inst"
+      }
+    ]
+  },
+  "init_value": {
+    "patterns": [
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#expr"
+      }
+    ]
+  },
+  "instance_or_prop_ref": {
+    "patterns": [
+      {
+        "include": "#instance_ref"
+      },
+      {
+        "include": "#__ANON_1"
+      },
+      {
+        "include": "#prop_keyword"
+      },
+      {
+        "include": "#instance_ref"
+      },
+      {
+        "include": "#__ANON_1"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#instance_ref"
+      }
+    ]
+  },
+  "instance_ref": {
+    "patterns": [
+      {
+        "include": "#instance_ref_element"
+      },
+      {
+        "include": "#__instance_ref_star_12"
+      },
+      {
+        "include": "#instance_ref_element"
+      }
+    ]
+  },
+  "instance_ref_element": {
+    "patterns": [
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#__instance_ref_element_star_13"
+      },
+      {
+        "include": "#CNAME"
+      }
+    ]
+  },
+  "integer_atom_type": {
+    "patterns": [
+      {
+        "include": "#LONGINT"
+      }
+    ]
+  },
+  "integer_type": {
+    "patterns": [
+      {
+        "include": "#integer_vector_type"
+      },
+      {
+        "include": "#integer_atom_type"
+      }
+    ]
+  },
+  "integer_vector_type": {
+    "patterns": [
+      {
+        "include": "#BIT"
+      }
+    ]
+  },
+  "post_encode_assignment": {
+    "patterns": [
+      {
+        "include": "#instance_ref"
+      },
+      {
+        "include": "#__ANON_1"
+      },
+      {
+        "include": "#ENCODE"
+      },
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#CNAME"
+      }
+    ]
+  },
+  "post_prop_assignment": {
+    "patterns": [
+      {
+        "include": "#prop_ref"
+      },
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#prop_assignment_rhs"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#prop_ref"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#post_encode_assignment"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "precedencetype_literal": {
+    "patterns": [
+      {
+        "include": "#HW"
+      },
+      {
+        "include": "#SW"
+      }
+    ]
+  },
+  "prop_assignment_lhs": {
+    "patterns": [
+      {
+        "include": "#prop_keyword"
+      },
+      {
+        "include": "#CNAME"
+      }
+    ]
+  },
+  "prop_assignment_rhs": {
+    "patterns": [
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#precedencetype_literal"
+      }
+    ]
+  },
+  "prop_keyword": {
+    "patterns": [
+      {
+        "include": "#SW"
+      },
+      {
+        "include": "#HW"
+      },
+      {
+        "include": "#RCLR"
+      },
+      {
+        "include": "#RSET"
+      },
+      {
+        "include": "#WOCLR"
+      },
+      {
+        "include": "#WOSET"
+      },
+      {
+        "include": "#WOT"
+      },
+      {
+        "include": "#WZS"
+      },
+      {
+        "include": "#WZC"
+      },
+      {
+        "include": "#WZT"
+      },
+      {
+        "include": "#WCLR"
+      },
+      {
+        "include": "#WSET"
+      },
+      {
+        "include": "#WUSER"
+      },
+      {
+        "include": "#RUSER"
+      },
+      {
+        "include": "#INTR"
+      },
+      {
+        "include": "#STICKY"
+      },
+      {
+        "include": "#STICKYBIT"
+      },
+      {
+        "include": "#ENABLE"
+      },
+      {
+        "include": "#MASK"
+      },
+      {
+        "include": "#HALTENABLE"
+      },
+      {
+        "include": "#HALTMASK"
+      },
+      {
+        "include": "#NEXT"
+      },
+      {
+        "include": "#RESET"
+      },
+      {
+        "include": "#RESETSIGNAL"
+      },
+      {
+        "include": "#WE"
+      },
+      {
+        "include": "#WEL"
+      },
+      {
+        "include": "#HWCLR"
+      },
+      {
+        "include": "#HWSET"
+      },
+      {
+        "include": "#INCR"
+      },
+      {
+        "include": "#DECR"
+      },
+      {
+        "include": "#THRESHOLD"
+      },
+      {
+        "include": "#SATURATE"
+      },
+      {
+        "include": "#OVERFLOW"
+      },
+      {
+        "include": "#UNDERFLOW"
+      },
+      {
+        "include": "#PARITYCHECK"
+      },
+      {
+        "include": "#PRECEDENCE"
+      },
+      {
+        "include": "#NAME"
+      },
+      {
+        "include": "#DESC"
+      },
+      {
+        "include": "#ONREAD"
+      },
+      {
+        "include": "#ONWRITE"
+      },
+      {
+        "include": "#SHADOW_MODE"
+      },
+      {
+        "include": "#COUNTER"
+      },
+      {
+        "include": "#SIGNALWIDTH"
+      },
+      {
+        "include": "#FIELDWIDTH"
+      }
+    ]
+  },
+  "prop_mod": {
+    "patterns": [
+      {
+        "include": "#POSEDGE"
+      },
+      {
+        "include": "#NEGEDGE"
+      },
+      {
+        "include": "#BOTHEDGE"
+      },
+      {
+        "include": "#LEVEL"
+      },
+      {
+        "include": "#NONSTICKY"
+      }
+    ]
+  },
+  "prop_ref": {
+    "patterns": [
+      {
+        "include": "#instance_ref"
+      },
+      {
+        "include": "#__ANON_1"
+      },
+      {
+        "include": "#prop_keyword"
+      },
+      {
+        "include": "#instance_ref"
+      },
+      {
+        "include": "#__ANON_1"
+      },
+      {
+        "include": "#CNAME"
+      }
+    ]
+  },
+  "property_assignment": {
+    "patterns": [
+      {
+        "include": "#explicit_prop_modifier"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#explicit_prop_assignment"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#post_prop_assignment"
+      }
+    ]
+  },
+  "property_attribute": {
+    "patterns": [
+      {
+        "include": "#property_type"
+      },
+      {
+        "include": "#property_usage"
+      },
+      {
+        "include": "#property_default"
+      },
+      {
+        "include": "#property_constraint"
+      }
+    ]
+  },
+  "property_comp_type": {
+    "patterns": [
+      {
+        "include": "#ADDRMAP"
+      },
+      {
+        "include": "#REGFILE"
+      },
+      {
+        "include": "#REG"
+      },
+      {
+        "include": "#FIELD"
+      },
+      {
+        "include": "#MEM"
+      },
+      {
+        "include": "#SIGNAL"
+      },
+      {
+        "include": "#CONSTRAINT"
+      },
+      {
+        "include": "#ALL"
+      }
+    ]
+  },
+  "property_comp_types": {
+    "patterns": [
+      {
+        "include": "#property_comp_type"
+      },
+      {
+        "include": "#__property_comp_types_star_5"
+      },
+      {
+        "include": "#property_comp_type"
+      }
+    ]
+  },
+  "property_constraint": {
+    "patterns": [
+      {
+        "include": "#CONSTRAINT"
+      },
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#property_constraint_type"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "property_constraint_type": {
+    "patterns": [
+      {
+        "include": "#COMPONENTWIDTH"
+      }
+    ]
+  },
+  "property_data_type": {
+    "patterns": [
+      {
+        "include": "#ADDRMAP"
+      },
+      {
+        "include": "#REGFILE"
+      },
+      {
+        "include": "#REG"
+      },
+      {
+        "include": "#FIELD"
+      },
+      {
+        "include": "#MEM"
+      },
+      {
+        "include": "#REF"
+      },
+      {
+        "include": "#__ANON_0"
+      },
+      {
+        "include": "#basic_data_type"
+      }
+    ]
+  },
+  "property_default": {
+    "patterns": [
+      {
+        "include": "#DEFAULT"
+      },
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "property_definition": {
+    "patterns": [
+      {
+        "include": "#PROPERTY"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__property_definition_star_4"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#PROPERTY"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "property_type": {
+    "patterns": [
+      {
+        "include": "#TYPE"
+      },
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#property_data_type"
+      },
+      {
+        "include": "#array_spec"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#TYPE"
+      },
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#property_data_type"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "property_usage": {
+    "patterns": [
+      {
+        "include": "#COMPONENT"
+      },
+      {
+        "include": "#EQUAL"
+      },
+      {
+        "include": "#property_comp_types"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "range_spec": {
+    "patterns": [
+      {
+        "include": "#LSQB"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#COLON"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#RSQB"
+      }
+    ]
+  },
+  "reg_body": {
+    "patterns": [
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__reg_body_star_1"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      }
+    ]
+  },
+  "reg_def": {
+    "patterns": [
+      {
+        "include": "#REG"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#reg_body"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#addr_alloc"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#REG"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#reg_body"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#REG"
+      },
+      {
+        "include": "#reg_body"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#addr_alloc"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#REG"
+      },
+      {
+        "include": "#reg_body"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "reg_stmt": {
+    "patterns": [
+      {
+        "include": "#default_assignment"
+      },
+      {
+        "include": "#field_def"
+      },
+      {
+        "include": "#signal_def"
+      },
+      {
+        "include": "#enum_def"
+      },
+      {
+        "include": "#struct_def"
+      },
+      {
+        "include": "#constraint_def"
+      },
+      {
+        "include": "#explicit_component_inst"
+      },
+      {
+        "include": "#property_assignment"
+      }
+    ]
+  },
+  "signal_body": {
+    "patterns": [
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__signal_body_star_3"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      }
+    ]
+  },
+  "signal_def": {
+    "patterns": [
+      {
+        "include": "#SIGNAL"
+      },
+      {
+        "include": "#signal_body"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#array_spec"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#SIGNAL"
+      },
+      {
+        "include": "#signal_body"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#SIGNAL"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#array_spec"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#SIGNAL"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "signal_stmt": {
+    "patterns": [
+      {
+        "include": "#default_assignment"
+      },
+      {
+        "include": "#property_assignment"
+      }
+    ]
+  },
+  "signing": {
+    "patterns": [
+      {
+        "include": "#UNSIGNED"
+      }
+    ]
+  },
+  "start": {
+    "patterns": [
+      {
+        "include": "#__start_star_0"
+      }
+    ]
+  },
+  "struct_def": {
+    "patterns": [
+      {
+        "include": "#ABSTRACT"
+      },
+      {
+        "include": "#STRUCT"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#COLON"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__struct_def_star_8"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#ABSTRACT"
+      },
+      {
+        "include": "#STRUCT"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#COLON"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#ABSTRACT"
+      },
+      {
+        "include": "#STRUCT"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__struct_def_star_8"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#ABSTRACT"
+      },
+      {
+        "include": "#STRUCT"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#STRUCT"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#COLON"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__struct_def_star_8"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#STRUCT"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#COLON"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#STRUCT"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#__struct_def_star_8"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#STRUCT"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#LBRACE"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "struct_elem": {
+    "patterns": [
+      {
+        "include": "#data_type"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#array_spec"
+      },
+      {
+        "include": "#SEMICOLON"
+      },
+      {
+        "include": "#data_type"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#SEMICOLON"
+      }
+    ]
+  },
+  "struct_kv": {
+    "patterns": [
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#COLON"
+      },
+      {
+        "include": "#expr"
+      }
+    ]
+  },
+  "struct_lit": {
+    "patterns": [
+      {
+        "include": "#type_ref"
+      },
+      {
+        "include": "#__ANON_25"
+      },
+      {
+        "include": "#struct_kv"
+      },
+      {
+        "include": "#__struct_lit_star_14"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#type_ref"
+      },
+      {
+        "include": "#__ANON_25"
+      },
+      {
+        "include": "#struct_kv"
+      },
+      {
+        "include": "#RBRACE"
+      },
+      {
+        "include": "#type_ref"
+      },
+      {
+        "include": "#__ANON_25"
+      },
+      {
+        "include": "#RBRACE"
+      }
+    ]
+  },
+  "type_ref": {
+    "patterns": [
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#DOT"
+      },
+      {
+        "include": "#CNAME"
+      },
+      {
+        "include": "#CNAME"
+      }
+    ]
+  }
+}
+}

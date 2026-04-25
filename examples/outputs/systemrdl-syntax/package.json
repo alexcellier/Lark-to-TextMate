@@ -1,0 +1,29 @@
+{
+  "name": "systemrdl-syntax",
+  "displayName": "systemrdl-syntax",
+  "description": "Syntax highlighting for systemrdl",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "systemrdl",
+        "aliases": ["systemrdl"],
+        "extensions": [".systemrdl"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "systemrdl",
+        "scopeName": "source.systemrdl",
+        "path": "./syntaxes/systemrdl.tmLanguage.json"
+      }
+    ]
+  }
+}

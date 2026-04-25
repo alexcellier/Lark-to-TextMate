@@ -1,0 +1,138 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "sample",
+  "scopeName": "source.sample",
+  "patterns": [
+  {
+    "match": "(?:(?:(?:[0-9])+(?:e|E)(?:(?:\\+|\\-))?(?:[0-9])+|(?:(?:[0-9])+\\.(?:(?:[0-9])+)?|\\.(?:[0-9])+)(?:(?:e|E)(?:(?:\\+|\\-))?(?:[0-9])+)?)|(?:[0-9])+)",
+    "name": "source.sample.constant.numeric"
+  },
+  {
+    "match": "+",
+    "name": "source.sample.keyword.operator"
+  },
+  {
+    "match": "-",
+    "name": "source.sample.keyword.operator"
+  },
+  {
+    "match": "*",
+    "name": "source.sample.punctuation"
+  },
+  {
+    "match": "/",
+    "name": "source.sample.punctuation"
+  },
+  {
+    "match": "(",
+    "name": "source.sample.punctuation"
+  },
+  {
+    "match": ")",
+    "name": "source.sample.punctuation"
+  }
+],
+  "repository": {
+  "LPAR": {
+    "match": "(",
+    "name": "source.sample.punctuation"
+  },
+  "MINUS": {
+    "match": "-",
+    "name": "source.sample.keyword.operator"
+  },
+  "NUMBER": {
+    "match": "(?:(?:(?:[0-9])+(?:e|E)(?:(?:\\+|\\-))?(?:[0-9])+|(?:(?:[0-9])+\\.(?:(?:[0-9])+)?|\\.(?:[0-9])+)(?:(?:e|E)(?:(?:\\+|\\-))?(?:[0-9])+)?)|(?:[0-9])+)",
+    "name": "source.sample.constant.numeric"
+  },
+  "PLUS": {
+    "match": "+",
+    "name": "source.sample.keyword.operator"
+  },
+  "RPAR": {
+    "match": ")",
+    "name": "source.sample.punctuation"
+  },
+  "SLASH": {
+    "match": "/",
+    "name": "source.sample.punctuation"
+  },
+  "STAR": {
+    "match": "*",
+    "name": "source.sample.punctuation"
+  },
+  "expr": {
+    "patterns": [
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#PLUS"
+      },
+      {
+        "include": "#term"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#MINUS"
+      },
+      {
+        "include": "#term"
+      },
+      {
+        "include": "#term"
+      }
+    ]
+  },
+  "factor": {
+    "patterns": [
+      {
+        "include": "#NUMBER"
+      },
+      {
+        "include": "#LPAR"
+      },
+      {
+        "include": "#expr"
+      },
+      {
+        "include": "#RPAR"
+      }
+    ]
+  },
+  "start": {
+    "patterns": [
+      {
+        "include": "#expr"
+      }
+    ]
+  },
+  "term": {
+    "patterns": [
+      {
+        "include": "#term"
+      },
+      {
+        "include": "#STAR"
+      },
+      {
+        "include": "#factor"
+      },
+      {
+        "include": "#term"
+      },
+      {
+        "include": "#SLASH"
+      },
+      {
+        "include": "#factor"
+      },
+      {
+        "include": "#factor"
+      }
+    ]
+  }
+}
+}

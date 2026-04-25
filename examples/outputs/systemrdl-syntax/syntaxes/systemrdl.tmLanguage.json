@@ -1,0 +1,859 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "systemrdl",
+  "scopeName": "source.systemrdl",
+  "patterns": [
+  {
+    "match": "(?:(?:(?:[0-9])+(?:e|E)(?:(?:\\+|\\-))?(?:[0-9])+|(?:(?:[0-9])+\\.(?:(?:[0-9])+)?|\\.(?:[0-9])+)(?:(?:e|E)(?:(?:\\+|\\-))?(?:[0-9])+)?)|(?:[0-9])+)",
+    "name": "source.systemrdl.constant.numeric"
+  },
+  {
+    "match": "(?:(?:[A-Z]|[a-z])|_)(?:(?:(?:[A-Z]|[a-z])|[0-9]|_))*",
+    "name": "source.systemrdl.string.quoted.double"
+  },
+  {
+    "match": "(?:[ \t\f\r\n])+",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "0[xX][0-9a-fA-F_]+",
+    "name": "source.systemrdl.constant.numeric"
+  },
+  {
+    "match": "\\d[\\d_]*\u0027[sS]?[bBoOdDhH][0-9a-fA-F_xXzZ?_]+",
+    "name": "source.systemrdl.constant.numeric"
+  },
+  {
+    "match": "\"(?:\\\\.|[^\"])*\"",
+    "name": "source.systemrdl.string.quoted.double"
+  },
+  {
+    "match": "\\/\\/[^\n]*",
+    "name": "source.systemrdl.comment.line"
+  },
+  {
+    "match": "\\/\\*.*?\\*\\/",
+    "name": "source.systemrdl.comment.line"
+  },
+  {
+    "match": "addrmap",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "{",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "}",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": ";",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "reg",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "field",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "signal",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "property",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "type",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "=",
+    "name": "source.systemrdl.keyword.operator"
+  },
+  {
+    "match": "regfile",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "mem",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "ref",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "number",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "component",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "|",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "constraint",
+    "name": "source.systemrdl.constant.numeric"
+  },
+  {
+    "match": "all",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "default",
+    "name": "source.systemrdl.keyword.operator"
+  },
+  {
+    "match": "componentwidth",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "enum",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "abstract",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": ":",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "struct",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "this",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "inside",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": ",",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "-\u003e",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "encode",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "posedge",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "negedge",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "bothedge",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "level",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "nonsticky",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "sw",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "hw",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "rclr",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "rset",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "woclr",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "woset",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "wot",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "wzs",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "wzc",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "wzt",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "wclr",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "wset",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "wuser",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "ruser",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "intr",
+    "name": "source.systemrdl.constant.numeric"
+  },
+  {
+    "match": "sticky",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "stickybit",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "enable",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "mask",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "haltenable",
+    "name": "source.systemrdl.keyword.operator"
+  },
+  {
+    "match": "haltmask",
+    "name": "source.systemrdl.keyword.operator"
+  },
+  {
+    "match": "next",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "reset",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "resetsignal",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "we",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "wel",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "hwclr",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "hwset",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "incr",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "decr",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "threshold",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "saturate",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "overflow",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "underflow",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "paritycheck",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "precedence",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "name",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "desc",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "onread",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "onwrite",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "shadow_mode",
+    "name": "source.systemrdl.keyword.operator"
+  },
+  {
+    "match": "counter",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "signalwidth",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "fieldwidth",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": ".",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "[",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "]",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "accesstype",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "addressingtype",
+    "name": "source.systemrdl.keyword.operator"
+  },
+  {
+    "match": "onreadtype",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "onwritetype",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "string",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "boolean",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "longint",
+    "name": "source.systemrdl.constant.numeric"
+  },
+  {
+    "match": "bit",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "unsigned",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "@",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "+=",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "%=",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "?",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "||",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "\u0026\u0026",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "==",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "!=",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "===",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "!==",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "==?",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "!=?",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "\u003c",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "\u003c=",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "\u003e",
+    "name": "source.systemrdl.keyword.operator"
+  },
+  {
+    "match": "\u003e=",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "\u003c\u003c",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "\u003e\u003e",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "\u003e\u003e\u003e",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "\u003c\u003c\u003c",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "+",
+    "name": "source.systemrdl.keyword.operator"
+  },
+  {
+    "match": "-",
+    "name": "source.systemrdl.keyword.operator"
+  },
+  {
+    "match": "*",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "/",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "%",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "~",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "!",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "\u0026",
+    "name": "source.systemrdl.keyword.operator"
+  },
+  {
+    "match": "~\u0026",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "~|",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "^",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "~^",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "^~",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "true",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "false",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "null",
+    "name": "source.systemrdl.entity.name"
+  },
+  {
+    "match": "(",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": ")",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "::",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "\u0027(",
+    "name": "source.systemrdl.punctuation"
+  },
+  {
+    "match": "\u0027{",
+    "name": "source.systemrdl.punctuation"
+  }
+],
+  "repository": {
+  "__constraint_body_star_9": {
+    "patterns": []
+  },
+  "__constraint_insts_star_10": {
+    "patterns": []
+  },
+  "__constraint_values_star_11": {
+    "patterns": []
+  },
+  "__enum_body_star_7": {
+    "patterns": []
+  },
+  "__enum_def_star_6": {
+    "patterns": []
+  },
+  "__expr_list_star_15": {
+    "patterns": []
+  },
+  "__field_body_star_2": {
+    "patterns": []
+  },
+  "__instance_ref_element_star_13": {
+    "patterns": []
+  },
+  "__instance_ref_star_12": {
+    "patterns": []
+  },
+  "__property_comp_types_star_5": {
+    "patterns": []
+  },
+  "__property_definition_star_4": {
+    "patterns": []
+  },
+  "__reg_body_star_1": {
+    "patterns": []
+  },
+  "__signal_body_star_3": {
+    "patterns": []
+  },
+  "__start_star_0": {
+    "patterns": []
+  },
+  "__struct_def_star_8": {
+    "patterns": []
+  },
+  "__struct_lit_star_14": {
+    "patterns": []
+  },
+  "addr_alloc": {
+    "patterns": []
+  },
+  "addrmap_def": {
+    "patterns": []
+  },
+  "array": {
+    "patterns": []
+  },
+  "array_lit": {
+    "patterns": []
+  },
+  "array_spec": {
+    "patterns": []
+  },
+  "atom": {
+    "patterns": []
+  },
+  "basic_data_type": {
+    "patterns": []
+  },
+  "cast_expr": {
+    "patterns": []
+  },
+  "component_inst_array_or_range": {
+    "patterns": []
+  },
+  "constraint_body": {
+    "patterns": []
+  },
+  "constraint_def": {
+    "patterns": []
+  },
+  "constraint_elem": {
+    "patterns": []
+  },
+  "constraint_insts": {
+    "patterns": []
+  },
+  "constraint_prop_assignment": {
+    "patterns": []
+  },
+  "constraint_value": {
+    "patterns": []
+  },
+  "constraint_values": {
+    "patterns": []
+  },
+  "data_type": {
+    "patterns": []
+  },
+  "default_assignment": {
+    "patterns": []
+  },
+  "description": {
+    "patterns": []
+  },
+  "enum_body": {
+    "patterns": []
+  },
+  "enum_def": {
+    "patterns": []
+  },
+  "enum_item": {
+    "patterns": []
+  },
+  "enumref": {
+    "patterns": []
+  },
+  "explicit_component_inst": {
+    "patterns": []
+  },
+  "explicit_prop_assignment": {
+    "patterns": []
+  },
+  "explicit_prop_assignment_stmt": {
+    "patterns": []
+  },
+  "explicit_prop_modifier": {
+    "patterns": []
+  },
+  "expr": {
+    "patterns": []
+  },
+  "expr_add": {
+    "patterns": []
+  },
+  "expr_and": {
+    "patterns": []
+  },
+  "expr_cond": {
+    "patterns": []
+  },
+  "expr_eq": {
+    "patterns": []
+  },
+  "expr_list": {
+    "patterns": []
+  },
+  "expr_mul": {
+    "patterns": []
+  },
+  "expr_or": {
+    "patterns": []
+  },
+  "expr_rel": {
+    "patterns": []
+  },
+  "expr_shift": {
+    "patterns": []
+  },
+  "expr_unary": {
+    "patterns": []
+  },
+  "field_body": {
+    "patterns": []
+  },
+  "field_def": {
+    "patterns": []
+  },
+  "field_range_spec": {
+    "patterns": []
+  },
+  "field_stmt": {
+    "patterns": []
+  },
+  "init_value": {
+    "patterns": []
+  },
+  "instance_or_prop_ref": {
+    "patterns": []
+  },
+  "instance_ref": {
+    "patterns": []
+  },
+  "instance_ref_element": {
+    "patterns": []
+  },
+  "integer_atom_type": {
+    "patterns": []
+  },
+  "integer_type": {
+    "patterns": []
+  },
+  "integer_vector_type": {
+    "patterns": []
+  },
+  "post_encode_assignment": {
+    "patterns": []
+  },
+  "post_prop_assignment": {
+    "patterns": []
+  },
+  "precedencetype_literal": {
+    "patterns": []
+  },
+  "prop_assignment_lhs": {
+    "patterns": []
+  },
+  "prop_assignment_rhs": {
+    "patterns": []
+  },
+  "prop_keyword": {
+    "patterns": []
+  },
+  "prop_mod": {
+    "patterns": []
+  },
+  "prop_ref": {
+    "patterns": []
+  },
+  "property_assignment": {
+    "patterns": []
+  },
+  "property_attribute": {
+    "patterns": []
+  },
+  "property_comp_type": {
+    "patterns": []
+  },
+  "property_comp_types": {
+    "patterns": []
+  },
+  "property_constraint": {
+    "patterns": []
+  },
+  "property_constraint_type": {
+    "patterns": []
+  },
+  "property_data_type": {
+    "patterns": []
+  },
+  "property_default": {
+    "patterns": []
+  },
+  "property_definition": {
+    "patterns": []
+  },
+  "property_type": {
+    "patterns": []
+  },
+  "property_usage": {
+    "patterns": []
+  },
+  "range_spec": {
+    "patterns": []
+  },
+  "reg_body": {
+    "patterns": []
+  },
+  "reg_def": {
+    "patterns": []
+  },
+  "reg_stmt": {
+    "patterns": []
+  },
+  "signal_body": {
+    "patterns": []
+  },
+  "signal_def": {
+    "patterns": []
+  },
+  "signal_stmt": {
+    "patterns": []
+  },
+  "signing": {
+    "patterns": []
+  },
+  "start": {
+    "patterns": []
+  },
+  "struct_def": {
+    "patterns": []
+  },
+  "struct_elem": {
+    "patterns": []
+  },
+  "struct_kv": {
+    "patterns": []
+  },
+  "struct_lit": {
+    "patterns": []
+  },
+  "type_ref": {
+    "patterns": []
+  }
+}
+}
