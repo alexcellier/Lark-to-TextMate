@@ -1,0 +1,29 @@
+{
+  "name": "{{ name }}",
+  "displayName": "{{ name }}",
+  "description": "Syntax highlighting for {{ language }}",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "{{ language }}",
+        "aliases": ["{{ language }}"],
+        "extensions": [".{{ language }}"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "{{ language }}",
+        "scopeName": "{{ scope }}",
+        "path": "./syntaxes/{{ language }}.tmLanguage.json"
+      }
+    ]
+  }
+}
